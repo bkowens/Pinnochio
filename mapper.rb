@@ -23,6 +23,7 @@ get '/radar' do
   coll.find(:location => {"$near" => [params['xloc'].to_i, params['yloc'].to_i], "$maxDistance" => 50}).to_a.to_json
 end
 
+# this query is for box or rectangle grid searches
 get '/section' do
 xloc1 = params['xloc1'].to_i
 xloc2 = params['xloc2'].to_i
